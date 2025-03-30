@@ -2,17 +2,31 @@
 			box-sizing: border-box; /*size calculate garda padding ra border pani include*/
 		}
 		
-		body {
+		/* body {
 			font-family: Arial;
 			background: #f1f1f1;
 			padding: 10px;
-		}
+		} */
+
+		body {
+            font-family: 'Dosis', sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
 
 		.header {
 			text-align: center;
 			padding: 20px;
 			background: white;
-			background: url(../img/header_back_03.jpg);
+			background: url(../img/coffe-code-travel.png);
 		}
 
 		.header h1 {
@@ -48,9 +62,9 @@
 			color: black;
 		}
 
-		.row {
+		/* .row {
 			overflow: hidden;
-		}
+		} */
 
 		.left {
 			float: left;
@@ -82,9 +96,32 @@
 			font-family: 'Dosis', sans-serif;
 		}
 
-		.footer {
+		.job-entry {
+			margin-bottom: 40px;
+		  }
+		  .job-entry h3 {
+			font-size: 1.25rem;
+			color: #1a202c;
+			margin-bottom: 5px;
+		  }
+		  .job-entry p {
+			font-size: 0.95rem;
+			color: #555;
+			font-style: italic;
+			margin-bottom: 10px;
+		  }
+
+		/* .footer {
 			padding: 20px;
 			margin-top: 20px;
 			background: #ddd;
 			text-align: center;
-		}
+		} */
+
+		.footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+            font-size: 14px;
+        }

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gallery - Gopal Gautam</title>
+    <link href="https://fonts.googleapis.com/css?family=Lobster|Lobster+Two" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Dosis|Yatra+One" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <style>
+        body {
+            font-family: 'Dosis', sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        .gallery {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .gallery h2 {
+            font-family: 'Lobster', cursive;
+            font-size: 28px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .gallery-grid img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .gallery-grid img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>Gallery</h1>
+        <p>Explore my collection of projects and images</p>
+    </div>
+
+    <div class="navbar">
+        <a href="index.html">Home</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="blogs.html">Blogs</a>
+        <a href="aboutme.html">About me</a>
+    </div>
+
+    <div class="gallery">
+        <h2>My Projects</h2>
+        <div class="gallery-grid">
+            <img src="https://via.placeholder.com/300x200?text=IT+Project+1" alt="IT Project 1" />
+            <img src="https://via.placeholder.com/300x200?text=IT+Project+2" alt="IT Project 2" />
+            <img src="https://via.placeholder.com/300x200?text=IT+Project+3" alt="IT Project 3" />
+            <img src="https://via.placeholder.com/300x200?text=IT+Project+4" alt="IT Project 4" />
+            <img src="https://via.placeholder.com/300x200?text=IT+Project+5" alt="IT Project 5" />
+            <img src="https://via.placeholder.com/300x200?text=IT+Project+6" alt="IT Project 6" />
+        </div>
+    </div>
+
+    <div class="footer">
+        Gopal Gautam
+    </div>
+
+</body>
+</html>

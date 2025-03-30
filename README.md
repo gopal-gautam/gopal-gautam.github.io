@@ -1,37 +1,47 @@
-## Welcome to GitHub Pages
+# Gopal Gautam's Personal Website
 
-You can use the [editor on GitHub](https://github.com/shirish7151/shirish7151.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+## Project Overview
+This project is a personal website for Gopal Gautam, showcasing his skills, experience, and interests. The website includes several pages linked through a navigation bar, providing easy access to different sections.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+## File Structure
+```
+gopal-gautam.github.io
+├── css
+│   └── style.css
+├── img
+│   └── (image files)
+├── index.html
+├── gallery.html
+├── blogs.html
+├── aboutme.html
+└── README.md
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+## File Descriptions
 
-### Jekyll Themes
+- **index.html**: The main entry point of the website. It features a navigation bar linking to the gallery, blogs, and about me pages, along with the main content that showcases Gopal's skills and experience.
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/shirish7151/shirish7151.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+- **gallery.html**: This page displays a collection of images or projects. It includes a header, a gallery section with images, and a footer.
 
-### Support or Contact
+- **blogs.html**: This file contains a list of blog posts or articles written by Gopal. It features a header, a section for blog entries, and a footer.
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+- **aboutme.html**: This page provides detailed information about Gopal, including his background, interests, and professional journey. It includes a header, content about Gopal, and a footer.
+
+- **css/style.css**: This file contains the styles for the website, defining the layout, colors, fonts, and overall appearance.
+
+- **img**: This directory contains image files used throughout the website.
+
+## Setup Instructions
+1. Clone the repository or download the project files.
+2. Open the project folder in a web browser to view the website.
+3. Modify the HTML files and CSS as needed to customize the content and appearance.
+
+## Features
+- Responsive design for various screen sizes.
+- Navigation links for easy access to different sections.
+- A gallery to showcase images or projects.
+- A blog section for sharing articles and insights.
+- An about me section to provide personal background and professional information.
+
+## License
+This project is open-source and available for personal use and modification.
