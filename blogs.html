@@ -7,49 +7,67 @@
     <link href="css/style.css" rel="stylesheet" type="text/css" />
 
     <style>
-        
-
-        .blog-entry {
-            background-color: #ffffff;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin: 20px;
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
             padding: 20px;
-            max-width: 600px;
-            transition: transform 0.3s, box-shadow 0.3s;
+            max-width: 1200px;
+            margin: 0 auto;
         }
-
-        .blog-entry:hover {
+        .blog-card {
+            background: white;
+            border: 2px solid #eee;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+        .blog-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            border-color: #667eea;
         }
-
-        .blog-entry h2 {
+        .blog-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-bottom: 1px solid #eee;
+        }
+        .blog-card-content {
+            padding: 20px;
+        }
+        .blog-card h3 {
             font-family: 'Lobster', cursive;
-            font-size: 24px;
+            font-size: 22px;
             color: #333;
-            margin-bottom: 10px;
+            margin: 0 0 10px 0;
         }
-
-        .blog-entry img {
-            max-width: 100%;
-            border-radius: 8px;
+        .blog-card p {
+            font-size: 15px;
+            color: #666;
+            line-height: 1.6;
             margin-bottom: 15px;
         }
-
-        .blog-entry p {
-            font-size: 16px;
-            line-height: 1.6;
-            color: #555;
+        .blog-card-meta {
+            font-size: 13px;
+            color: #999;
+            font-style: italic;
         }
-
-        .blog-entry p:first-of-type {
-            font-weight: bold;
-            color: #888;
+        .blog-card-link {
+            display: inline-block;
+            margin-top: 10px;
+            font-size: 13px;
+            color: #667eea;
+            text-decoration: none;
         }
-
-        
+        .blog-card-link:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
@@ -66,46 +84,66 @@
         <a href="aboutme.html">About me</a>
     </div>
 
-    <div class="row">
-        <div class="blog-entry">
-            <h2>Why Every Developer Should Learn Cloud Architecture</h2>
-            <img src="img/blog-cloud-architecture.png" alt="Blog image">
-            <p>Date: April 1, 2025</p>
-            <p>Cloud computing has transformed the way we build and deploy software. Understanding cloud architecture gives developers the power to design scalable, cost-effective solutions that meet the needs of today’s digital-first businesses. By learning the fundamentals of virtual machines, containers, serverless platforms, and distributed systems, developers gain insights that directly influence how their code operates in production.</p>
-            <p>Whether you're working on small projects or large-scale enterprise platforms, cloud architecture knowledge empowers you to collaborate better with DevOps, optimize for performance, and troubleshoot complex systems. It’s no longer just a job for sysadmins—developers who understand the cloud shape the future of software delivery.</p>
-        </div>
+    <div class="blog-grid">
+        <a href="blogs/why-every-developer-should-learn-cloud-architecture.html" class="blog-card">
+            <img src="img/blog-cloud-architecture.png" alt="Cloud Architecture Blog">
+            <div class="blog-card-content">
+                <h3>Why Every Developer Should Learn Cloud Architecture</h3>
+                <p>Understanding cloud architecture gives developers the power to design scalable, cost-effective solutions for modern businesses...</p>
+                <div class="blog-card-meta">Published: April 1, 2025</div>
+                <div class="blog-card-link">Read More →</div>
+            </div>
+        </a>
 
-        <div class="blog-entry">
-            <h2>Automating Workflows with Python Scripts</h2>
-            <img src="img/blog-python-automation.png" alt="Blog image">
-            <p>Date: March 22, 2025</p>
-            <p>Python is one of the most versatile programming languages when it comes to automation. With libraries like `os`, `shutil`, `pandas`, and `schedule`, it becomes easy to write scripts that perform repetitive tasks such as cleaning data, generating reports, or monitoring systems. Automation saves time, reduces errors, and improves efficiency—especially in DevOps and data-driven environments.</p>
-            <p>Whether it's for personal productivity or enterprise-level operations, scripting repetitive processes is a superpower. Automating workflows frees you up to focus on more strategic challenges and helps standardize routines that can otherwise be inconsistent or error-prone.</p>
-        </div>
+        <a href="blogs/automating-workflows-with-python-scripts.html" class="blog-card">
+            <img src="img/blog-python-automation.png" alt="Python Automation Blog">
+            <div class="blog-card-content">
+                <h3>Automating Workflows with Python Scripts</h3>
+                <p>Python is one of the most versatile programming languages when it comes to automation. With libraries like `os`, `shutil`...</p>
+                <div class="blog-card-meta">Published: March 22, 2025</div>
+                <div class="blog-card-link">Read More →</div>
+            </div>
+        </a>
 
-        <div class="blog-entry">
-            <h2>Powering Dashboards with Microsoft Power BI</h2>
-            <img src="img/blog-powerbi.png" alt="Blog image">
-            <p>Date: March 10, 2025</p>
-            <p>Power BI is a powerful data visualization tool that helps turn raw business data into actionable insights. It allows you to connect to various data sources, transform and model that data, and create interactive dashboards to monitor key metrics. The beauty of Power BI is how it brings technical and non-technical stakeholders together with visuals that tell a compelling story.</p>
-            <p>Integrating Power BI with databases or cloud services lets teams visualize real-time changes, enabling better decision-making. As businesses become more data-driven, the ability to build impactful dashboards with Power BI becomes an essential skill.</p>
-        </div>
+        <a href="blogs/powering-dashboards-with-microsoft-power-bi.html" class="blog-card">
+            <img src="img/blog-powerbi.png" alt="Power BI Blog">
+            <div class="blog-card-content">
+                <h3>Powering Dashboards with Microsoft Power BI</h3>
+                <p>Power BI is a powerful data visualization tool that helps turn raw business data into actionable insights...</p>
+                <div class="blog-card-meta">Published: March 10, 2025</div>
+                <div class="blog-card-link">Read More →</div>
+            </div>
+        </a>
 
-        <div class="blog-entry">
-            <h2>Lessons from Building an E-Commerce Platform</h2>
-            <img src="img/blog-learning-ecommerce.png" alt="Blog image">
-            <p>Date: February 18, 2025</p>
-            <p>Building an e-commerce system is a complex task that spans frontend development, backend logic, database management, and cloud deployment. My experience involved everything from setting up product catalogs, implementing secure payment systems, handling order processing, and integrating shipping APIs. Each part required careful attention to UX, performance, and scalability.</p>
-            <p>Along the way, I learned that customer experience is king. Even the smallest delays or confusing interfaces can lead to lost sales. Using tools like WooCommerce, Laravel, and VueJS, we developed a streamlined experience that boosted engagement and conversions.</p>
-        </div>
+        <a href="blogs/lessons-from-building-an-ecommerce-platform.html" class="blog-card">
+            <img src="img/blog-learning-ecommerce.png" alt="E-Commerce Blog">
+            <div class="blog-card-content">
+                <h3>Lessons from Building an E-Commerce Platform</h3>
+                <p>Building an e-commerce system spans frontend, backend, database, and cloud deployment. Key lessons from the journey...</p>
+                <div class="blog-card-meta">Published: February 18, 2025</div>
+                <div class="blog-card-link">Read More →</div>
+            </div>
+        </a>
 
-        <div class="blog-entry">
-            <h2>From Manual to Magical: How Automation Changed Our Company</h2>
-            <img src="img/blog-manual-to-automation.png" alt="Blog image">
-            <p>Date: January 30, 2025</p>
-            <p>When I first joined the company, many day-to-day processes were handled manually—daily reports, data entry, stock checks, and more. Over time, I implemented Python scripts and integrated tools to automate these operations, cutting down several hours of human labor per week. The transformation was immediate and measurable.</p>
-            <p>This shift didn’t just improve productivity; it also boosted morale. Staff had more time to focus on meaningful work and less on mundane, repetitive tasks. Automation enabled us to scale without expanding our headcount and paved the way for more innovation across departments.</p>
-        </div>
+        <a href="blogs/from-manual-to-magical-automation-changed-our-company.html" class="blog-card">
+            <img src="img/blog-manual-to-automation.png" alt="Automation Blog">
+            <div class="blog-card-content">
+                <h3>From Manual to Magical: How Automation Changed Our Company</h3>
+                <p>Transforming manual processes into automated workflows, saving hours of labor and boosting team morale...</p>
+                <div class="blog-card-meta">Published: January 30, 2025</div>
+                <div class="blog-card-link">Read More →</div>
+            </div>
+        </a>
+
+        <a href="blogs/ssg-static-site-generator.html" class="blog-card">
+            <img src="img/blog-markdown-simple.png" alt="SSG Blog">
+            <div class="blog-card-content">
+                <h3>Building Static Sites with SSG</h3>
+                <p>Learn how to create blazing-fast static websites using just Markdown files with my lightweight SSG tool...</p>
+                <div class="blog-card-meta">Published: Today</div>
+                <div class="blog-card-link">Read More →</div>
+            </div>
+        </a>
     </div>
 
     <div class="footer">

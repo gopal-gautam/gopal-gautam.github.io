@@ -1,66 +1,92 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Gallery - Gopal Gautam</title>
+    <title>Project Gallery - Gopal Gautam</title>
     <link href="https://fonts.googleapis.com/css?family=Lobster|Lobster+Two" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Dosis|Yatra+One" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet" type="text/css" />
     <style>
-        body {
+        .gallery-content {
             font-family: 'Dosis', sans-serif;
-            background-color: #f9f9f9;
-            margin: 0;
-            padding: 0;
-        }
-
-        .gallery {
-            text-align: center;
-            padding: 20px;
-        }
-
-        .gallery h2 {
-            font-family: 'Lobster', cursive;
-            font-size: 28px;
-            color: #333;
-            margin-bottom: 20px;
-        }
-
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            padding: 20px;
-            max-width: 1200px;
+            line-height: 1.8;
+            max-width: 1400px;
             margin: 0 auto;
-        }
-
-        .gallery-grid img {
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .gallery-grid img:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-        }
-
-        .footer {
-            text-align: center;
             padding: 20px;
-            background-color: #333;
-            color: #fff;
+        }
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .project-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .project-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+        .project-image {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-bottom: 1px solid #eee;
+        }
+        .project-info {
+            padding: 18px;
+        }
+        .project-title {
+            font-family: 'Yatra One', cursive;
+            font-size: 20px;
+            margin: 0 0 8px 0;
+            color: #333;
+        }
+        .project-desc {
             font-size: 14px;
+            color: #555;
+            margin: 0 0 12px 0;
+            line-height: 1.5;
+        }
+        .project-link {
+            display: inline-block;
+            padding: 6px 12px;
+            background: #333;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 13px;
+            transition: background 0.3s ease;
+        }
+        .project-link:hover {
+            background: #555;
+        }
+        .about-section {
+            text-align: center;
+            padding: 30px 20px;
+        }
+        .about-section h1 {
+            font-family: 'Lobster', cursive;
+            color: #333;
+            font-size: 42px;
+            margin: 0 0 15px 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        .about-section p {
+            font-size: 16px;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
         }
     </style>
 </head>
 <body>
-
     <div class="header">
-        <h1>Gallery</h1>
-        <p>Explore my collection of projects and images</p>
+        <h1>Project Gallery</h1>
+        <p>A collection of my open source projects</p>
     </div>
 
     <div class="navbar">
@@ -70,15 +96,125 @@
         <a href="aboutme.html">About me</a>
     </div>
 
-    <div class="gallery">
-        <h2>My Projects</h2>
-        <div class="gallery-grid">
-            <img src="https://via.placeholder.com/300x200?text=IT+Project+1" alt="IT Project 1" />
-            <img src="https://via.placeholder.com/300x200?text=IT+Project+2" alt="IT Project 2" />
-            <img src="https://via.placeholder.com/300x200?text=IT+Project+3" alt="IT Project 3" />
-            <img src="https://via.placeholder.com/300x200?text=IT+Project+4" alt="IT Project 4" />
-            <img src="https://via.placeholder.com/300x200?text=IT+Project+5" alt="IT Project 5" />
-            <img src="https://via.placeholder.com/300x200?text=IT+Project+6" alt="IT Project 6" />
+    <div class="about-section">
+        <h1>My Open Source Projects</h1>
+        <p>A collection of my open source projects showcasing various technologies and skills. Each project links to its GitHub repository for more details.</p>
+    </div>
+
+    <div class="gallery-content">
+        <div class="projects-grid">
+            <div class="project-card">
+                <img src="img/gallery/images/ssg.svg" alt="Static Site Generator" class="project-image">
+                <div class="project-info">
+                    <h2 class="project-title">Static Site Generator</h2>
+                    <p class="project-desc">A modern SSG using CSS selectors for content injection. No custom templating required.</p>
+                    <a href="https://github.com/gopal-gautam/ssg" target="_blank" class="project-link">View on GitHub</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <img src="img/gallery/images/markdown-editor.svg" alt="Markdown Editor" class="project-image">
+                <div class="project-info">
+                    <h2 class="project-title">Markdown Editor</h2>
+                    <p class="project-desc">Professional desktop Markdown editor built with Electron, featuring rich text editing and AI assistance.</p>
+                    <a href="https://github.com/gopal-gautam/markdown-editor" target="_blank" class="project-link">View on GitHub</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <img src="img/gallery/images/diagram-generator.svg" alt="Diagram Generator" class="project-image">
+                <div class="project-info">
+                    <h2 class="project-title">Diagram Generator</h2>
+                    <p class="project-desc">Interactive diagram creator built with React, TypeScript, and Vite. Create and export professional diagrams.</p>
+                    <a href="https://github.com/gopal-gautam/diagram-generator" target="_blank" class="project-link">View on GitHub</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <img src="img/gallery/images/jsonql.svg" alt="JSONQL" class="project-image">
+                <div class="project-info">
+                    <h2 class="project-title">JSONQL</h2>
+                    <p class="project-desc">Query JSON files using SQL syntax in Python. Supports filtering, joins, aggregation, and plugin functions.</p>
+                    <a href="https://github.com/gopal-gautam/jsonql" target="_blank" class="project-link">View on GitHub</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <img src="img/gallery/images/AI-Notepad_Minimal.svg" alt="AI Notepad Minimal" class="project-image">
+                <div class="project-info">
+                    <h2 class="project-title">AI Notepad Minimal</h2>
+                    <p class="project-desc">Minimal Windows notepad-style editor with AI generation capabilities. Replace selected text with AI-generated content.</p>
+                    <a href="https://github.com/gopal-gautam/AI_Notepad_Minimal" target="_blank" class="project-link">View on GitHub</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <img src="img/gallery/images/TaskSchedulerPortal.svg" alt="Task Scheduler Portal" class="project-image">
+                <div class="project-info">
+                    <h2 class="project-title">Task Scheduler Portal</h2>
+                    <p class="project-desc">Web portal for managing and running Windows Task Scheduler jobs with admin dashboard and user triggers.</p>
+                    <a href="https://github.com/gopal-gautam/TaskSchedulerPortal" target="_blank" class="project-link">View on GitHub</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <img src="img/gallery/images/python_nai_parser.svg" alt="Python NAI Parser" class="project-image">
+                <div class="project-info">
+                    <h2 class="project-title">Python NAI Parser</h2>
+                    <p class="project-desc">BAI2/NAI bank statement file parser for Python with powerful multi-parameter filtering capabilities.</p>
+                    <a href="https://github.com/gopal-gautam/python_nai_parser" target="_blank" class="project-link">View on GitHub</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <img src="img/gallery/images/Python-ffmpeg-wrapper.svg" alt="Python FFmpeg Wrapper" class="project-image">
+                <div class="project-info">
+                    <h2 class="project-title">Python FFmpeg Wrapper</h2>
+                    <p class="project-desc">Fluent Python wrapper for ffmpeg. Build complex pipelines with simple method calls.</p>
+                    <a href="https://github.com/gopal-gautam/Python-ffmpeg-wrapper" target="_blank" class="project-link">View on GitHub</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <img src="img/gallery/images/EMPMS.svg" alt="EMPMS" class="project-image">
+                <div class="project-info">
+                    <h2 class="project-title">EMPMS</h2>
+                    <p class="project-desc">Modern login page built with React, TypeScript, Tailwind CSS, and Auth0 authentication.</p>
+                    <a href="https://github.com/gopal-gautam/EMPMS" target="_blank" class="project-link">View on GitHub</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <img src="img/gallery/images/empms_backend.svg" alt="EMPMS Backend" class="project-image">
+                <div class="project-info">
+                    <h2 class="project-title">EMPMS Backend</h2>
+                    <p class="project-desc">NestJS backend framework starter for building efficient and scalable server-side applications.</p>
+                    <a href="https://github.com/gopal-gautam/empms_backend" target="_blank" class="project-link">View on GitHub</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <img src="img/gallery/images/image-copyrighter.svg" alt="Image Copyrighter" class="project-image">
+                <div class="project-info">
+                    <h2 class="project-title">Image Copyrighter</h2>
+                    <p class="project-desc">React web app for creating branded images with logo and text overlays. Drag, drop, and export easily.</p>
+                    <a href="https://github.com/gopal-gautam/image-copyrighter" target="_blank" class="project-link">View on GitHub</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <img src="img/gallery/images/expo-push-notification.svg" alt="Expo Push Notification" class="project-image">
+                <div class="project-info">
+                    <h2 class="project-title">Expo Push Notification</h2>
+                    <p class="project-desc">Laravel package providing notification channel for expo push notifications.</p>
+                    <a href="https://github.com/gopal-gautam/expo-push-notification" target="_blank" class="project-link">View on GitHub</a>
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 50px; padding: 30px; background: #f5f5f5; border-radius: 8px;">
+            <p style="color: #666; font-size: 15px; margin: 0;"><strong>License:</strong> All projects are available under the MIT License</p>
+            <p style="color: #999; font-size: 13px; margin: 10px 0 0 0;">Built with ❤️ by Gopal Gautam</p>
         </div>
     </div>
 

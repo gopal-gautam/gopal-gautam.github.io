@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Building Static Sites with SSG - Gopal Gautam</title>
+    <link href="https://fonts.googleapis.com/css?family=Lobster|Lobster+Two" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Dosis|Yatra+One" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet" type="text/css" />
+    <style>
+        .blog-content {
+            font-family: 'Dosis', sans-serif;
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .blog-body p {
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+        .blog-body ul, .blog-body ol {
+            margin-bottom: 20px;
+            padding-left: 30px;
+        }
+        .blog-body li {
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+        .blog-footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            background: #f5f5f5;
+            border-radius: 10px;
+        }
+        .blog-footer a {
+            color: #667eea;
+            text-decoration: none;
+        }
+        .navbar a {
+            float: left;
+            display: block;
+            color: #f2f2f2;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        .navbar a:hover {
+            background: #ddd;
+            background: url(../img/bkg_hover_02.jpg);
+            text-decoration: underline;
+            color: black;
+        }
+        .lesson-box {
+            background: #f0f8ff;
+            border-left: 4px solid #667eea;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Building Static Sites with SSG</h1>
+    </div>
+
+    <div class="navbar">
+        <a href="../index.html">Home</a>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../blogs.html">Blogs</a>
+        <a href="../aboutme.html">About me</a>
+    </div>
+
+    <div class="blog-content">
+        <div class="blog-body">
+            <img src="../img/blog-markdown-simple.png" alt="Static Site Generator" style="max-width: 100%; border-radius: 8px; margin-bottom: 25px;">
+            
+            <p>A modern static site generator that uses CSS selectors for content injection. No custom templating language required - just HTML, CSS, JavaScript, and YAML. This approach lets you use standard web technologies you already know.</p>
+            
+            <p><strong>Key Features:</strong></p>
+            <ul>
+                <li><strong>Real HTML/CSS/JS Templates</strong> - Work with standard web technologies</li>
+                <li><strong>YAML content files</strong> - Clean, readable content format with front-matter</li>
+                <li><strong>CSS selector-based injection</strong> - Map content to elements using selectors</li>
+                <li><strong>Markdown support</strong> - Write blog posts in markdown</li>
+                <li><strong>Full blog features</strong> - Tag pages, RSS feed, sitemap, pagination</li>
+                <li><strong>Live reload dev server</strong> - Watch mode with auto-rebuild</li>
+                <li><strong>Fast builds</strong> - Efficient rendering with JSDOM</li>
+            </ul>
+
+            <div class="lesson-box">
+                <strong>Installation</strong>
+                <p>Install from npm or source:</p>
+            </div>
+
+            <pre><code># Install from npm
+npm i selector-ssg
+
+# Install from source
+npm install
+npm link</code></pre>
+
+            <h2>Getting Started</h2>
+            
+            <p><strong>Initialize a new project:</strong></p>
+            <pre><code>ssg init
+
+# Initialize with specific directory
+ssg init -d my-project</code></pre>
+
+            <p><strong>Start development server:</strong></p>
+            <pre><code>ssg serve
+
+# Custom port
+ssg serve --port 8080
+
+# Without watch mode
+ssg serve --no-watch</code></pre>
+
+            <p>Build your static site:</p>
+            <pre><code>ssg build
+
+# Custom configuration
+ssg build --config custom-config.yml
+
+# Verbose output
+ssg build --verbose</code></pre>
+
+            <h2>Project Structure</h2>
+            
+            <pre><code>project/
+├── config.yml              # Site configuration
+├── template/               # Theme/template files
+│   ├── layouts/           # Page layouts
+│   │   ├── base.html
+│   │   ├── page.html
+│   │   └── post.html
+│   ├── partials/          # Reusable components
+│   │   ├── header.html
+│   │   └── footer.html
+│   └── assets/            # Static assets
+│       ├── css/
+│       ├── js/
+│       └── img/
+├── source/
+│   └── public/            # Content files
+│       ├── index.yml
+│       ├── about.yml
+│       └── blog/
+│           └── post.yml
+└── dist/                  # Generated output (git-ignored)</code></pre>
+
+            <h2>Configuration</h2>
+            
+            <p>Edit <code>config.yml</code> to customize your site:</p>
+            
+            <pre><code>site:
+  name: My Site
+  url: https://example.com
+  language: en
+
+paths:
+  template: template
+  source: source/public
+  dist: dist
+
+build:
+  clean: true
+  pretty_urls: true  # /about/ vs /about.html
+  strict_selectors: false  # Fail on missing selectors
+
+blog:
+  posts_dir: blog
+  index_layout: page
+  index_slug: blog
+  posts_per_page: 10</code></pre>
+
+            <h2>Creating Content</h2>
+            
+            <p>Create a new page or post:</p>
+            <pre><code>ssg new post "My Post Title"
+ssg new page "About Us"</code></pre>
+
+            <h2>YAML Content Format</h2>
+            
+            <pre><code>type: page
+layout: page
+title: About
+slug: about
+
+inject:
+  "h1": title
+  ".content": body_html
+
+body:
+  format: markdown
+  content: |
+    # About Us
+    
+    Your content here...</code></pre>
+
+            <h2>CSS Selector Injection</h2>
+            
+            <p>Map YAML fields to HTML elements using CSS selectors:</p>
+            
+            <pre><code>type: post
+layout: post
+title: My First Post
+slug: my-first-post
+date: 2025-01-01
+tags: [tech, tutorial]
+draft: false
+
+inject:
+  "h1.title": title
+  ".post-meta .date": date
+  ".content": body_html
+
+body:
+  format: markdown
+  content: |
+    # Hello World
+    
+    This is my blog post...</code></pre>
+
+            <p><strong>Set attributes using @ notation:</strong></p>
+            
+            <pre><code>inject:
+  "h1": title  # Set text content
+  ".hero-image@src": image_url  # Set attribute
+  ".content": body_html  # Set HTML content
+  "meta[name='description']@content": excerpt</code></pre>
+
+            <h2>Using data-bind Attributes</h2>
+            
+            <p>Add data-bind attributes to your HTML templates:</p>
+            
+            <pre><code>&lt;h1 data-bind="title"&gt;Fallback Title&lt;/h1&gt;
+&lt;div data-bind="body_html"&gt;&lt;/div&gt;
+&lt;time data-bind="date"&gt;&lt;/time&gt;</code></pre>
+
+            <p>The YAML values will automatically populate these elements.</p>
+
+            <h2>Layouts</h2>
+            
+            <p>Layouts are regular HTML files in <code>template/layouts/</code>:</p>
+            
+            <pre><code>&lt;h1&gt;Site Title&lt;/h1&gt;
+
+&lt;span&gt;Site Title&lt;/span&gt;</code></pre>
+
+            <h2>Partials</h2>
+            
+            <p>Include reusable components using <code>&lt;include&gt;</code>:</p>
+            
+            <pre><code>&lt;span&gt;&lt;/span&gt;</code></pre>
+
+            <h2>Body Content Formats</h2>
+            
+            <p><strong>Markdown format:</strong></p>
+            <pre><code>body:
+  format: markdown
+  content: |
+    # Heading
+    
+    Paragraph with **bold** and *italic*.</code></pre>
+
+            <p><strong>HTML format:</strong></p>
+            <pre><code>body:
+  format: html
+  content: |
+    Heading
+    Your HTML content...</code></pre>
+
+            <p><strong>Text format:</strong></p>
+            <pre><code>body:
+  format: text
+  content: Plain text will be escaped</code></pre>
+
+            <h2>Automatic Features</h2>
+            
+            <p>The generator automatically creates:</p>
+            <ul>
+                <li><strong>Blog index</strong> - List of all posts at /blog</li>
+                <li><strong>Tag pages</strong> - Individual pages for each tag at /tags/{tag}</li>
+                <li><strong>RSS feed</strong> - XML feed at /rss.xml</li>
+                <li><strong>Sitemap</strong> - SEO sitemap at /sitemap.xml</li>
+            </ul>
+
+            <h2>Automatic Fields</h2>
+            
+            <p>These fields are automatically generated:</p>
+            <ul>
+                <li><strong>body_html</strong> - Rendered HTML from body content</li>
+                <li><strong>excerpt</strong> - Auto-generated excerpt from markdown (first 200 chars)</li>
+                <li><strong>reading_time</strong> - Estimated reading time in minutes</li>
+            </ul>
+
+            <h2>Custom Fields</h2>
+            
+            <p>Add any custom fields to your YAML:</p>
+            
+            <pre><code>title: My Post
+author: John Doe
+hero_image: /img/hero.jpg
+cta_text: Learn More
+cta_url: /signup
+
+inject:
+  ".author": author
+  ".hero@src": hero_image
+  ".cta": cta_text
+  ".cta@href": cta_url</code></pre>
+
+            <div class="lesson-box">
+                <strong>Development Workflow</strong>
+                <p>The dev server watches for changes in:</p>
+                <ul>
+                    <li><code>source/public/</code> - Content files</li>
+                    <li><code>template/</code> - Templates, layouts, partials, assets</li>
+                </ul>
+                <p>Changes trigger automatic rebuild.</p>
+            </div>
+
+            <div class="blog-footer">
+                <p>Written by <strong>Gopal Gautam</strong></p>
+                <p>Check out more blogs <a href="../blogs.html">here</a></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        Gopal Gautam
+    </div>
+
+</body>
+</html>

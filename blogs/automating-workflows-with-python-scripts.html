@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Automating Workflows with Python Scripts - Gopal Gautam</title>
+    <link href="https://fonts.googleapis.com/css?family=Lobster|Lobster+Two" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Dosis|Yatra+One" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet" type="text/css" />
+    <style>
+        .blog-content {
+            font-family: 'Dosis', sans-serif;
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .blog-body p {
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+        .blog-body ul, .blog-body ol {
+            margin-bottom: 20px;
+            padding-left: 30px;
+        }
+        .blog-body li {
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+        .blog-footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            background: #f5f5f5;
+            border-radius: 10px;
+        }
+        .blog-footer a {
+            color: #667eea;
+            text-decoration: none;
+        }
+        .navbar a {
+            float: left;
+            display: block;
+            color: #f2f2f2;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        .navbar a:hover {
+            background: #ddd;
+            background: url(../img/bkg_hover_02.jpg);
+            text-decoration: underline;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Automating Workflows with Python Scripts</h1>
+    </div>
+
+    <div class="navbar">
+        <a href="../index.html">Home</a>
+        <a href="../gallery.html">Gallery</a>
+        <a href="../blogs.html">Blogs</a>
+        <a href="../aboutme.html">About me</a>
+    </div>
+
+    <div class="blog-content">
+        <div class="blog-body">
+            <img src="../img/blog-python-automation.png" alt="Python Automation" style="max-width: 100%; border-radius: 8px; margin-bottom: 25px;">
+            
+            <p>Python is one of the most versatile programming languages when it comes to automation. With libraries like <code class="highlight">os</code>, <code class="highlight">shutil</code>, <code class="highlight">pandas</code>, and <code class="highlight">schedule</code>, it becomes easy to write scripts that perform repetitive tasks such as cleaning data, generating reports, or monitoring systems.</p>
+            
+            <p><strong>Core Automation Libraries:</strong></p>
+            <ul>
+                <li><strong>os/shutil:</strong> File system operations, file manipulation</li>
+                <li><strong>pandas:</strong> Data processing, cleaning, and analysis</li>
+                <li><strong>schedule:</strong> Scheduled task execution</li>
+                <li><strong>requests:</strong> API interactions and web scraping</li>
+                <li><strong>subprocess:</strong> System command execution</li>
+            </ul>
+
+            <p><strong>Automation Benefits:</strong></p>
+            <ul>
+                <li><strong>Time Savings:</strong> Automate hours of manual work into minutes</li>
+                <li><strong>Error Reduction:</strong> Eliminate human error in repetitive tasks</li>
+                <li><strong>Consistency:</strong> Ensure standardized processes every time</li>
+                <li><strong>Scalability:</strong> Handle growing workloads without additional effort</li>
+                <li><strong>Monitoring:</strong> Continuous system health checks and alerts</li>
+            </ul>
+
+            <p>Whether it's for personal productivity or enterprise-level operations, scripting repetitive processes is a superpower. Automating workflows frees you up to focus on more strategic challenges and helps standardize routines that can otherwise be inconsistent or error-prone.</p>
+
+            <p><strong>Example Script Structure:</strong></p>
+            <pre><code>import os
+import shutil
+import pandas as pd
+from schedule import every, run_pending
+
+def daily_report():
+    # Generate daily data report
+    data = load_data()
+    report = process_data(data)
+    save_report(report)
+    
+def cleanup_old_files():
+    # Remove files older than 30 days
+    remove_old_files(30)
+
+def main():
+    every(1).do(daily_report)
+    every('5/30').do(cleanup_old_files)
+    run_pending()
+
+if __name__ == "__main__":
+    main()</code></pre>
+
+            <div class="blog-footer">
+                <p>Written by <strong>Gopal Gautam</strong></p>
+                <p>Check out more blogs <a href="../blogs.html">here</a></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        Gopal Gautam
+    </div>
+
+</body>
+</html>

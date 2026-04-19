@@ -5,29 +5,294 @@
     <link href="https://fonts.googleapis.com/css?family=Lobster|Lobster+Two" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Dosis|Yatra+One" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <style>
+        * {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            font-size: 16px;
+        }
+        body {
+            font-size: 16px;
+            line-height: 1.6;
+            font-family: 'Dosis', sans-serif;
+        }
+        .about-content {
+            font-family: 'Dosis', sans-serif;
+            line-height: 1.8;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .intro-section {
+            text-align: center;
+            padding: 40px 20px;
+            margin-bottom: 30px;
+        }
+        .intro-section h1 {
+            font-family: 'Lobster', cursive;
+            color: #333;
+            font-size: 42px;
+            margin: 0 0 15px 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        .intro-section p {
+            font-size: 18px !important;
+            color: #555;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+            justify-content: center;
+        }
+        .skill-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            min-height: 180px;
+            display: flex;
+            flex-direction: column;
+        }
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.12);
+        }
+        .skill-content {
+            padding: 22px;
+            text-align: center;
+        }
+        .skill-title {
+            font-family: 'Yatra One', cursive;
+            font-size: 24px !important;
+            margin: 0 0 10px 0;
+            color: #333;
+            font-weight: 400;
+        }
+        .skill-subtitle {
+            font-size: 15px !important;
+            color: #555;
+            margin: 0 0 12px 0;
+            font-weight: 400;
+        }
+        .skill-desc {
+            font-size: 15px !important;
+            color: #666;
+            margin: 0;
+            line-height: 1.6;
+            font-weight: 300;
+        }
+        .experience-section h2 {
+            font-family: 'Yatra One', cursive;
+            color: #333;
+            font-size: 34px !important;
+            text-align: center;
+            margin-bottom: 25px;
+            line-height: 1.3;
+        }
+        .job-entry {
+            background: white;
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 18px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+        }
+        .job-title {
+            font-family: 'Yatra One', cursive;
+            font-size: 24px !important;
+            color: #333;
+            margin: 0 0 10px 0;
+            font-weight: 400;
+        }
+        .job-location {
+            font-size: 14px !important;
+            color: #777;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            margin-bottom: 12px;
+        }
+        .job-description {
+            font-size: 17px !important;
+            color: #444;
+            margin: 0 0 14px 0;
+            line-height: 1.6;
+        }
+        .job-list {
+            margin: 14px 0 0 0;
+            padding-left: 24px;
+        }
+        .job-list li {
+            font-size: 16px !important;
+            color: #555;
+            margin-bottom: 9px;
+            line-height: 1.6;
+            font-weight: 400;
+        }
+        .interests-section {
+            margin-top: 50px;
+            padding: 24px;
+            background: #f9f9f9;
+            border-radius: 12px;
+            text-align: center;
+        }
+        .interests-section h2 {
+            font-family: 'Yatra One', cursive;
+            color: #333;
+            font-size: 28px !important;
+            margin: 0 0 18px 0;
+        }
+        .interests-section p {
+            font-size: 17px !important;
+            color: #555;
+            line-height: 1.7;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: #999;
+            font-size: 14px;
+        }
+    </style>
 </head>
 <body>
-
     <div class="header">
         <h1>About Me</h1>
+        <p>Software Engineer | Cloud Engineer | Data Engineer</p>
     </div>
 
     <div class="navbar">
         <a href="index.html">Home</a>
         <a href="gallery.html">Gallery</a>
         <a href="blogs.html">Blogs</a>
-        <a href="aboutme.html">About Me</a>
+        <a href="aboutme.html">About me</a>
     </div>
 
-    <div class="content">
-        <h2>Gopal Gautam</h2>
-        <p>I’m an experienced Software Engineer with 8+ years in software development, data engineering, and cloud infrastructure. I've worked across diverse industries including E-commerce, Civic Tech, and IT services, with a focus on automating systems, scaling applications, and integrating cloud solutions. I thrive at the intersection of Education, Science, and Technology—driven to create meaningful, scalable tools that solve real-world problems.</p>
-        
-        <h3>Interests</h3>
-        <p>In my free time, I enjoy traveling, exploring new technologies, and indulging in coffee culture. I believe in continuous learning and often engage in online courses and workshops to enhance my skills.</p>
-        
-        <h3>Professional Journey</h3>
-        <p>Throughout my career, I have taken on various roles that have allowed me to grow and adapt in the fast-paced tech industry. My journey has been fueled by a passion for problem-solving and a desire to make a positive impact through technology.</p>
+    <div class="about-content">
+        <div class="intro-section">
+            <h1>Hello! I'm Gopal Gautam</h1>
+            <p>I'm an experienced Software Engineer with 8+ years in software development, data engineering, and cloud infrastructure. I've worked across diverse industries including E-commerce, Civic Tech, and IT services, with a focus on automating systems, scaling applications, and integrating cloud solutions. I thrive at the intersection of Education, Science, and Technology—driven to create meaningful, scalable tools that solve real-world problems.</p>
+        </div>
+
+        <div class="skills-grid">
+            <div class="skill-card">
+                <div class="skill-content">
+                    <h2 class="skill-title">Software Engineer</h2>
+                    <p class="skill-subtitle">Building software with more commits than regrets</p>
+                    <p class="skill-desc">Proficient in a wide range of modern development tools and technologies including Python, JavaScript, Git, Docker, Linux, and more.</p>
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-content">
+                    <h2 class="skill-title">Cloud Engineer</h2>
+                    <p class="skill-subtitle">Building clouds that actually have silver linings (and zero downtime)</p>
+                    <p class="skill-desc">Experienced in deploying and managing scalable cloud infrastructure on AWS and Azure with Linux-based systems, web servers, high availability setups, and load balancing for optimal performance.</p>
+                </div>
+            </div>
+
+            <div class="skill-card">
+                <div class="skill-content">
+                    <h2 class="skill-title">Data Engineer</h2>
+                    <p class="skill-subtitle">Turning messy data into magic (and dashboards)</p>
+                    <p class="skill-desc">Skilled in building end-to-end data solutions using Python, Pandas, SQL, and Spark, with hands-on experience in ETL pipelines, Excel automation, and creating insightful dashboards with Power BI.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="experience-section">
+            <h2>Professional Experience</h2>
+
+            <div class="job-entry">
+                <h3 class="job-title">Senior Software Engineer / Data Engineer</h3>
+                <p class="job-location">Sydney, Australia</p>
+                <p class="job-description">Developed and maintained multiple full-stack eCommerce platforms, built Python tools to automate supply chain and admin workflows, implemented a PowerBI dashboard for financial analysis, engineered hybrid on-prem/cloud AWS platform, automated business processes via scripting, and handled server admin and resource optimization.</p>
+                <ul class="job-list">
+                    <li>Developed and maintained multiple full-stack eCommerce platforms</li>
+                    <li>Built Python tools to automate supply chain and admin workflows</li>
+                    <li>Implemented a PowerBI dashboard for financial analysis</li>
+                    <li>Engineered hybrid on-prem/cloud AWS platform</li>
+                    <li>Automated business processes via scripting</li>
+                    <li>Handled server admin and resource optimization</li>
+                </ul>
+            </div>
+
+            <div class="job-entry">
+                <h3 class="job-title">Cloud Specialist</h3>
+                <p class="job-location">Sydney, Australia</p>
+                <p class="job-description">Designed AWS infrastructure and led migrations, mentored teams on cloud architecture, built a reliable cloud hosting platform, and reduced hosting cost and improved uptime.</p>
+                <ul class="job-list">
+                    <li>Designed AWS infrastructure and led migrations</li>
+                    <li>Mentored teams on cloud architecture</li>
+                    <li>Built a reliable cloud hosting platform</li>
+                    <li>Reduced hosting cost and improved uptime</li>
+                </ul>
+            </div>
+
+            <div class="job-entry">
+                <h3 class="job-title">Software Developer</h3>
+                <p class="job-location">Sydney, Australia</p>
+                <p class="job-description">Built SPAs using VueJS and Laravel, developed REST APIs and enhanced performance, and worked on CI/CD pipelines and web app scalability.</p>
+                <ul class="job-list">
+                    <li>Built SPAs using VueJS and Laravel</li>
+                    <li>Developed REST APIs and enhanced performance</li>
+                    <li>Worked on CI/CD pipelines and web app scalability</li>
+                </ul>
+            </div>
+
+            <div class="job-entry">
+                <h3 class="job-title">Full Stack Engineer</h3>
+                <p class="job-location">Sydney, Australia</p>
+                <p class="job-description">Developed frontend and backend for travel platform and created APIs and integrated video/marketing tools.</p>
+                <ul class="job-list">
+                    <li>Developed frontend and backend for travel platform</li>
+                    <li>Created APIs and integrated video/marketing tools</li>
+                </ul>
+            </div>
+
+            <div class="job-entry">
+                <h3 class="job-title">Software Engineer</h3>
+                <p class="job-location">Nepal</p>
+                <p class="job-description">Built civic-tech tools for disaster risk reduction, developed permit system and Kobo Toolbox customizations, and managed databases for events and trainings.</p>
+                <ul class="job-list">
+                    <li>Built civic-tech tools for disaster risk reduction</li>
+                    <li>Developed permit system and Kobo Toolbox customizations</li>
+                    <li>Managed databases for events and trainings</li>
+                </ul>
+            </div>
+
+            <div class="job-entry">
+                <h3 class="job-title">Network Application Developer</h3>
+                <p class="job-location">Kathmandu, Nepal</p>
+                <p class="job-description">Maintained network/firewall servers and ERP software, and configured and administered Nagios and CRM systems.</p>
+                <ul class="job-list">
+                    <li>Maintained network/firewall servers and ERP software</li>
+                    <li>Configured and administered Nagios and CRM systems</li>
+                </ul>
+            </div>
+
+            <div class="job-entry">
+                <h3 class="job-title">Technical Support Assistant</h3>
+                <p class="job-location">Kathmandu, Nepal</p>
+                <p class="job-description">Developed network monitoring and automation tools, and built Nagios plugins and DNS/DHCP tools.</p>
+                <ul class="job-list">
+                    <li>Developed network monitoring and automation tools</li>
+                    <li>Built Nagios plugins and DNS/DHCP tools</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="interests-section">
+            <h2>Interests</h2>
+            <p>In my free time, I enjoy traveling to explore new cultures and technologies, indulging in coffee culture from around the world, and continuously learning through online courses and workshops. I believe in staying curious and keeping my skills sharp to better serve both my clients and the tech community.</p>
+        </div>
     </div>
 
     <div class="footer">

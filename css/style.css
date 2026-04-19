@@ -1,7 +1,7 @@
 		* {
 			box-sizing: border-box; /*size calculate garda padding ra border pani include*/
 		}
-		
+
 		/* body {
 			font-family: Arial;
 			background: #f1f1f1;
@@ -110,6 +110,21 @@
 			font-style: italic;
 			margin-bottom: 10px;
 		  }
+
+		/* Code styling */
+		pre {
+			background: #2d2d2d;
+			color: #f8f8f2;
+			padding: 15px;
+			border-radius: 8px;
+			overflow-x: auto;
+			font-family: 'Courier New', monospace;
+			font-size: 14px;
+			line-height: 1.6;
+			margin: 20px 0;
+			white-space: pre-wrap;
+			word-wrap: break-word;
+		}
 
 		/* .footer {
 			padding: 20px;

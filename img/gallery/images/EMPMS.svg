@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="240" viewBox="0 0 400 240">
+  <rect width="400" height="240" fill="#ffffff"/>
+  <text x="20" y="50" font-family="Segoe UI" font-size="24" fill="#333333">[GitHub Repository]</text>
+  <text x="20" y="100" font-family="Consolas" font-size="18" fill="#1e8814">✓</text>
+  <text x="20" y="130" font-family="Segoe UI" font-size="16" fill="#555555">Project: EMPMS</text>
+  <text x="20" y="180" font-family="Segoe UI" font-size="12" fill="#777777">View on GitHub →</text>
+</svg>
