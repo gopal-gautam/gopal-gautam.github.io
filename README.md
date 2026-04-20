@@ -36,6 +36,16 @@ gopal-gautam.github.io
 2. Open the project folder in a web browser to view the website.
 3. Modify the HTML files and CSS as needed to customize the content and appearance.
 
+## Running Tests
+This project includes a small test suite powered by `pytest`. To run the tests, first install the dependencies and then execute `pytest` from the project root:
+
+```bash
+pip install -r requirements.txt  # if you haven't already
+pytest
+```
+
+The tests validate that the navigation bar links in `index.html` reference files that actually exist in the repository.
+
 ## Features
 - Responsive design for various screen sizes.
 - Navigation links for easy access to different sections.
